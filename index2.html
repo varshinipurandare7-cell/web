@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Varshini ✦ Creative Soul</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --green: #b6ff5c;
+      --dark: #111111;
+      --purple: #b28cff;
+      --pink: #ff82c8;
+      --cream: #fffdf5;
+      --blue: #79d8ff;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1100px;
+      z-index: 999;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 13px 20px;
+
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(15px);
+
+      border: 2px solid #111;
+      border-radius: 50px;
+
+      box-shadow: 5px 5px 0 #111;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #8a5cf6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #8a5cf6;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 7% 80px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    .blob.one {
+      width: 250px;
+      height: 250px;
+      background: var(--green);
+      top: 15%;
+      left: -80px;
+    }
+
+    .blob.two {
+      width: 200px;
+      height: 200px;
+      background: var(--pink);
+      bottom: 5%;
+      right: -60px;
+    }
+
+    .blob.three {
+      width: 130px;
+      height: 130px;
+      background: var(--blue);
+      top: 25%;
+      right: 12%;
+    }
+
+    .hero-content {
+      max-width: 950px;
+      text-align: center;
+    }
+
+    .hello {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 8px 17px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      transform: rotate(-3deg);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 10vw, 110px);
+      line-height: .9;
+      letter-spacing: -6px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #8a5cf6;
+      -webkit-text-stroke: 2px #111;
+      text-shadow: 5px 5px 0 #111;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .hero-description strong {
+      color: #111;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      margin: 5px;
+
+      border: 2px solid #111;
+      border-radius: 12px;
+
+      text-decoration: none;
+      font-weight: 700;
+
+      transition: .2s;
+    }
+
+    .btn-black {
+      background: #111;
+      color: white;
+      box-shadow: 5px 5px 0 var(--green);
+    }
+
+    .btn-white {
+      background: white;
+      color: #111;
+      box-shadow: 5px 5px 0 var(--pink);
+    }
+
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 #111;
+    }
+
+    /* MARQUEE */
+
+    .marquee {
+      overflow: hidden;
+      background: #111;
+      color: white;
+      padding: 15px 0;
+      border-top: 2px solid #111;
+      border-bottom: 2px solid #111;
+    }
+
+    .marquee-content {
+      white-space: nowrap;
+      display: inline-block;
+      animation: move 18s linear infinite;
+      font-family: "Space Grotesk";
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .marquee span {
+      color: var(--green);
+      margin: 0 20px;
+    }
+
+    @keyframes move {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-heading {
+      max-width: 1100px;
+      margin: auto;
+      margin-bottom: 45px;
+    }
+
+    .small-title {
+      color: #8a5cf6;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1;
+      margin-top: 10px;
+      letter-spacing: -3px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #dfffaa;
+    }
+
+    .about-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 35px;
+    }
+
+    .about-card {
+      background: white;
+      border: 2px solid #111;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    .about-card p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .fun-facts {
+      display: grid;
+      gap: 15px;
+    }
+
+    .fact {
+      padding: 20px;
+      border: 2px solid #111;
+      border-radius: 18px;
+      background: #ff82c8;
+      font-weight: 700;
+      box-shadow: 5px 5px 0 #111;
+    }
+
+    .fact:nth-child(2) {
+      background: #b28cff;
+    }
+
+    .fact:nth-child(3) {
+      background: #79d8ff;
+    }
+
+    /* INTERESTS */
+
+    .interests {
+      background: #fffdf5;
+    }
+
+    .interest-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .interest-card {
+      min-height: 240px;
+      padding: 28px;
+
+      border: 2px solid #111;
+      border-radius: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      box-shadow: 7px 7px 0 #111;
+
+      transition: .25s;
+    }
+
+    .interest-card:hover {
+      transform: rotate(-2deg) translateY(-7px);
+    }
+
+    .interest-icon {
+      font-size: 50px;
+    }
+
+    .interest-card h3 {
+      font-size: 25px;
+      margin: 15px 0 5px;
+    }
+
+    .interest-card p {
+      color: #444;
+    }
+
+    .dance {
+      background: #ffb4dd;
+    }
+
+    .sing {
+      background: #bba0ff;
+    }
+
+    .draw {
+      background: #a9e8ff;
+    }
+
+    .creative {
+      background: #dfff73;
+    }
+
+    .travel {
+      background: #ffd88a;
+    }
+
+    .nature {
+      background: #b9f2bc;
+    }
+
+    /* CREATIVE SECTION */
+
+    .creative-section {
+      background: #111;
+      color: white;
+    }
+
+    .creative-section .small-title {
+      color: var(--green);
+    }
+
+    .creative-section h2 {
+      color: white;
+    }
+
+    .creative-content {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .creative-box {
+      border: 2px solid white;
+      border-radius: 25px;
+      padding: 35px;
+      min-height: 250px;
+    }
+
+    .creative-box h3 {
+      font-size: 30px;
+      color: var(--green);
+      margin-bottom: 15px;
+    }
+
+    .creative-box p {
+      color: #ddd;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .sticker {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 8px 15px;
+      background: var(--pink);
+      color: #111;
+      border-radius: 30px;
+      font-weight: 700;
+      transform: rotate(-4deg);
+    }
+
+    /* QUOTE */
+
+    .quote {
+      background: var(--purple);
+      text-align: center;
+      border-bottom: 2px solid #111;
+    }
+
+    .quote h2 {
+      max-width: 900px;
+      margin: auto;
+      font-size: clamp(35px, 6vw, 65px);
+      line-height: 1.05;
+    }
+
+    .quote p {
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #fffdf5;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(45px, 7vw, 80px);
+      letter-spacing: -4px;
+    }
+
+    .contact-box p {
+      margin: 20px auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #111;
+      background: white;
+      border: 2px solid #111;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 4px 4px 0 #111;
+      transition: .2s;
+    }
+
+    .socials a:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 #111;
+      background: var(--green);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer span {
+      color: var(--green);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        width: 94%;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .about-grid,
+      .creative-content {
+        grid-template-columns: 1fr;
+      }
+
+      .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 15px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 6%;
+      }
+
+      .about-card,
+      .creative-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">varshini<span>✦</span></div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#vibes">Vibes</a></li>
+      <li><a href="#creative">Creative</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+
+    <div class="hero-content">
+
+      <div class="hello">hey there! it's varshini 👋</div>
+
+      <h1>
+        Engineer<br>
+        <span>with a creative soul.</span>
+      </h1>
+
+      <p class="hero-description">
+        I'm an engineering student who loves
+        <strong>learning new things, creating random ideas,
+        dancing like nobody's watching, singing my heart out,
+        drawing, travelling & finding beautiful places.</strong>
+      </p>
+
+      <div class="buttons">
+        <a href="#vibes" class="btn btn-black">Explore my vibe ↓</a>
+        <a href="#contact" class="btn btn-white">Let's connect ✦</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MARQUEE -->
+
+  <div class="marquee">
+    <div class="marquee-content">
+      LEARN ✦ CREATE ✦ DANCE ✦ SING ✦ DRAW ✦ TRAVEL ✦ DREAM ✦
+      <span>BE CURIOUS.</span>
+      LEARN ✦ CREATE ✦ DANCE ✦ SING ✦ DRAW ✦ TRAVEL ✦ DREAM ✦
+      <span>BE CURIOUS.</span>
+    </div>
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="section-heading">
+      <div class="small-title">01 — about me</div>
+      <h2>More than<br>just an engineer.</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+
+        <p>
+          Hi! I'm <strong>Varshini</strong> 🌱
+          <br><br>
+
+          I'm currently an engineering student who is always curious
+          about how things work and excited to learn something new.
+
+          <br><br>
+
+          But engineering is only one part of me.
+
+          I love expressing myself through <strong>dance, singing,
+          drawing and creativity.</strong> I enjoy travelling,
+          discovering cool places, being around greenery and
+          collecting little moments that make life interesting.
+
+          <br><br>
+
+          Basically... my brain is 50% engineering and 50%
+          "wait, I have another creative idea." 💭
+        </p>
+
+      </div>
+
+      <div class="fun-facts">
+
+        <div class="fact">
+          💻 Engineering student
+        </div>
+
+        <div class="fact">
+          🎨 Creative by default
+        </div>
+
+        <div class="fact">
+          🌍 Always ready to explore
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTERESTS -->
+
+  <section class="interests" id="vibes">
+
+    <div class="section-heading">
+      <div class="small-title">02 — my vibes</div>
+      <h2>Things that<br>make me ME.</h2>
+    </div>
+
+    <div class="interest-grid">
+
+      <div class="interest-card dance">
+        <div class="interest-icon">💃</div>
+
+        <div>
+          <h3>Dancing</h3>
+          <p>
+            Music on. World off. Just vibes.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="interest-card sing">
+        <div class="interest-icon">🎤</div>
+
+        <div>
+          <h3>Singing</h3>
+          <p>
+            If there's a song, there's probably me singing it.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="interest-card draw">
+        <div class="interest-icon">🎨</div>
+
+        <div>
+          <h3>Drawing</h3>
+          <p>
+            Turning random thoughts into little pieces of art.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="interest-card creative">
+        <div class="interest-icon">💡</div>
+
+        <div>
+          <h3>Creating</h3>
+          <p>
+            New ideas are basically my brain's favorite hobby.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="interest-card travel">
+        <div class="interest-icon">✈️</div>
+
+        <div>
+          <h3>Travelling</h3>
+          <p>
+            New places, new memories, new stories.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="interest-card nature">
+        <div class="interest-icon">🌿</div>
+
+        <div>
+          <h3>Nature</h3>
+          <p>
+            Greenery + cool weather = instant happiness.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CREATIVE -->
+
+  <section class="creative-section" id="creative">
+
+    <div class="section-heading">
+
+      <div class="small-title">03 — creative corner</div>
+
+      <h2>
+        Logic in my code.<br>
+        Chaos in my creativity.
+      </h2>
+
+    </div>
+
+
+    <div class="creative-content">
+
+      <div class="creative-box">
+
+        <h3>🎨 Create.</h3>
+
+        <p>
+          I love experimenting with ideas, drawing, designing,
+          imagining random concepts and turning simple thoughts
+          into something fun.
+        </p>
+
+        <span class="sticker">creative mode: ON</span>
+
+      </div>
+
+
+      <div class="creative-box">
+
+        <h3>🧠 Learn.</h3>
+
+        <p>
+          I'm always curious about new technologies, new skills
+          and interesting ideas. I believe every day is a chance
+          to learn something that yesterday's me didn't know.
+        </p>
+
+        <span class="sticker">always curious ✦</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUOTE -->
+
+  <section class="quote">
+
+    <h2>
+      "Stay curious.<br>
+      Stay creative.<br>
+      Keep exploring."
+    </h2>
+
+    <p>— Varshini 🌱</p>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <div class="small-title">04 — say hi</div>
+
+      <h2>Let's create<br>something cool.</h2>
+
+      <p>
+        Have an idea? Want to talk about technology, art,
+        music, travel or literally anything interesting?
+        I'm always up for a good conversation. ✨
+      </p>
+
+      <div class="socials">
+
+        <a href="mailto:your-email@example.com">
+          📧 Email
+        </a>
+
+        <a href="#" target="_blank">
+          💼 LinkedIn
+        </a>
+
+        <a href="#" target="_blank">
+          🐙 GitHub
+        </a>
+
+        <a href="#" target="_blank">
+          📸 Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    Made with <span>♡</span> by Varshini ✦
+  </footer>
+
+</body>
+</html>
