@@ -1,0 +1,514 @@
+Absolutely — here’s a single-file personal portfolio page for **Varshini**, with HTML + CSS in one `index.html`. It has a green, travel-inspired aesthetic with sections for About, Interests, and Contact.
+
+ Varshini — Personal Portfolio index.html
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Varshini | Engineering Student</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: #173b2a;
+      background: #f4fbf5;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #238b57;
+    }
+
+    .logo span {
+      color: #f2a93b;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #173b2a;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #238b57;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding: 130px 8% 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(228, 248, 232, 0.85), rgba(244, 251, 245, 0.95)),
+        radial-gradient(circle at top right, #b9e7c5, transparent 35%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .profile-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 55px;
+      background: linear-gradient(135deg, #238b57, #8ed19d);
+      box-shadow: 0 15px 35px rgba(35, 139, 87, 0.25);
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 75px);
+      color: #173b2a;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #238b57;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #547565;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #5b7064;
+      font-size: 17px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: #238b57;
+    }
+
+    .btn-primary:hover {
+      background: #176c42;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      color: #238b57;
+      border: 2px solid #238b57;
+    }
+
+    .btn-outline:hover {
+      background: #238b57;
+      color: white;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #173b2a;
+    }
+
+    .section-title p {
+      color: #708277;
+      margin-top: 5px;
+    }
+
+    /* About */
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #5d6e64;
+      font-size: 17px;
+    }
+
+    /* Interest Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .card {
+      padding: 35px 25px;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(31, 83, 52, 0.08);
+      transition: 0.3s;
+      border: 1px solid #e4f1e7;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(31, 83, 52, 0.13);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #238b57;
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #6b7b71;
+      font-size: 15px;
+    }
+
+    /* Quote */
+    .quote {
+      text-align: center;
+      background: #1d6844;
+      color: white;
+    }
+
+    .quote blockquote {
+      max-width: 750px;
+      margin: auto;
+      font-size: 28px;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .quote p {
+      margin-top: 15px;
+      color: #ccebd7;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      background: #f4fbf5;
+    }
+
+    .contact p {
+      color: #617269;
+      margin-bottom: 25px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      padding: 10px 20px;
+      background: white;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #238b57;
+      font-weight: 600;
+      border: 1px solid #dcece1;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: #238b57;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      padding: 22px;
+      text-align: center;
+      background: #123c29;
+      color: #cbe4d3;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .quote blockquote {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav {
+        position: static;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Varshini<span>.</span></div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="profile-icon">🌿</div>
+
+      <h1>Hi, I'm <span>Varshini</span></h1>
+
+      <h2>Engineering Student • Learner • Explorer</h2>
+
+      <p>
+        I'm an engineering student who loves discovering new things,
+        exploring creative ideas, travelling to beautiful places,
+        and enjoying music and dance.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">Discover More</a>
+        <a href="#contact" class="btn btn-outline">Let's Connect</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>A little bit about who I am</p>
+    </div>
+
+    <div class="about-content">
+      <p>
+        I believe learning is a never-ending journey. As an engineering
+        student, I enjoy learning new technologies, exploring fresh ideas,
+        and challenging myself to grow every day.
+        <br><br>
+        Beyond academics, I find happiness in nature, peaceful and cool
+        places, travelling, music, and dance. I love collecting experiences
+        and turning every journey into a beautiful memory.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Interests -->
+  <section id="interests">
+
+    <div class="section-title">
+      <h2>Things I Love</h2>
+      <p>My interests beyond engineering</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Learning & Ideas</h3>
+        <p>
+          I enjoy learning new concepts, technologies and discovering
+          interesting ideas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Nature</h3>
+        <p>
+          Greenery, peaceful surroundings and cool places help me feel
+          refreshed and inspired.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>Travel</h3>
+        <p>
+          Exploring new places, experiencing different cultures and
+          creating unforgettable memories.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>Music</h3>
+        <p>
+          Music is one of my favorite ways to relax, enjoy the moment
+          and express myself.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💃</div>
+        <h3>Dance</h3>
+        <p>
+          Dance gives me energy, freedom and a fun way to express my
+          creativity.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Dream Big</h3>
+        <p>
+          I believe in continuously growing, exploring opportunities
+          and building a meaningful future.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Quote -->
+  <section class="quote">
+    <blockquote>
+      "Keep learning, keep exploring, and enjoy every beautiful journey."
+    </blockquote>
+
+    <p>— Varshini 🌿</p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>Let's Connect</h2>
+      <p>I'd love to connect and share ideas!</p>
+    </div>
+
+    <p>
+      Whether it's technology, travel, music, dance or a new idea —
+      let's talk.
+    </p>
+
+    <div class="social">
+      <a href="mailto:your-email@example.com">📧 Email</a>
+      <a href="#" target="_blank">💼 LinkedIn</a>
+      <a href="#" target="_blank">🐙 GitHub</a>
+      <a href="#" target="_blank">📸 Instagram</a>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Varshini • Made with 🌿 & ❤️
+  </footer>
+
+</body>
+</html>
+```
